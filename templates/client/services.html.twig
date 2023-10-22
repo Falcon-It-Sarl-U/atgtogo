@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row">
+		{% for service in services %}
+			<div class="col-md-12 col-lg-4 wow fadeInUp" data-wow-duration="1500ms">
+				<div class="service-one__box">
+					<img src="{{ asset('uploads/images/services/' ~ service.image) }}" alt="Slide Image" width="370">
+					<div class="service-one__box-content">
+						<h3>
+							<a href="{{ path('app_client_service_show', {'id': service.id}) }}">{{ service.titre }}</a>
+						</h3>
+					</div>
+				</div>
+			</div>
+		{% else %}
+			<tr>
+				<td colspan="5">no records found</td>
+			</tr>
+		{% endfor %}
+	</div>
+</div>

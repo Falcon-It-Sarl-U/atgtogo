@@ -1,0 +1,82 @@
+{% extends 'baseAdmin.html.twig' %}
+
+
+{% block title %}Service
+{% endblock %}
+
+{% block body %}
+	<h1>Service</h1>
+	<div class="card mb-3">
+		<div class="card-header border-bottom">
+			<div class="row flex-between-end">
+				<div class="col-auto align-self-center">
+					<h5 class="mb-0" data-anchor="data-anchor">Slide index</h5>
+				</div>
+
+			</div>
+		</div>
+		<div class="card-body pt-0">
+			<div class="tab-content">
+				<div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-41755341-f9f5-415a-acd4-1d501e1c6abd" id="dom-41755341-f9f5-415a-acd4-1d501e1c6abd">
+					<div class="table-responsive scrollbar">
+						<table class="table">
+							<tbody>
+								<tr>
+									<th>Id</th>
+									<td>{{ service.id }}</td>
+								</tr>
+								<tr>
+									<th>Titre</th>
+									<td>{{ service.titre }}</td>
+								</tr>
+								<tr>
+									<th>Description1</th>
+									<td>{{ service.description1 }}</td>
+								</tr>
+								<tr>
+									<th>Avantage1</th>
+									<td>{{ service.avantage1 }}</td>
+								</tr>
+								<tr>
+									<th>Avantage2</th>
+									<td>{{ service.avantage2 }}</td>
+								</tr>
+								<tr>
+									<th>Description2</th>
+									<td>{{ service.description2 }}</td>
+								</tr>
+								<tr>
+									<th>Benefice1</th>
+									<td>{{ service.benefice1 }}</td>
+								</tr>
+								<tr>
+									<th>Benefice2</th>
+									<td>{{ service.benefice2 }}</td>
+								</tr>
+								<tr>
+									<th>Benefices3</th>
+									<td>{{ service.benefices3 }}</td>
+								</tr>
+								<tr>
+									<th>Description3</th>
+									<td>{{ service.description3 }}</td>
+								</tr>
+								<tr>
+									<th>Image</th>
+									<td><img src="{{ asset('uploads/images/services/' ~ service.image) }}" alt="Slide Image" width="200"></td>
+								</tr>
+								<tr>
+									<th>Image2</th>
+									<td><img src="{{ asset('uploads/images/services/' ~ service.image2) }}" alt="Slide Image" width="200"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<a class='btn btn-success' href="{{ path('app_admin_service_index') }}">back to list</a>
+
+				<a class='btn btn-warning' href="{{ path('app_admin_service_edit', {'id': service.id}) }}">edit</a>
+
+				{{ include('admin/service/_delete_form.html.twig') }}
+			{% endblock %}

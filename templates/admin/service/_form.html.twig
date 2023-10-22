@@ -1,0 +1,72 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Services</h5>
+            <h6 class="card-subtitle text-muted">Tous les champs sont obligatoires</h6>
+        </div>
+        <div class="card-body">
+            {{ form_start(form) }}
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        {{ form_row(form.titre) }}
+                    </div>
+                    <div class="mb-3 col-md-6">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        {{ form_row(form.avantage1) }}
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        {{ form_row(form.avantage2) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        {{ form_row(form.benefice1) }}
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        {{ form_row(form.benefice2) }}
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        {{ form_row(form.benefices3) }}
+                    </div>
+                </div>
+                <div class="row">
+                    {# <div class="mb-3 col-md-6"> #}
+                        {{ form_row(form.description1) }}
+                    {# </div> #}
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        {{ form_row(form.description2) }}
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        {{ form_row(form.description3) }}
+                    </div>
+                </div>
+              
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        {% if service.image %}
+                            <img src="{{ asset('uploads/images/services/' ~ service.image) }}" alt="Slide Image" width="200">
+                        {% endif %}
+                        {{ form_row(form.image, { 'required': false }) }}
+                        <small class="form-text text-muted">Example block-level help text here.</small>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        {% if service.image2 %}
+                            <img src="{{ asset('uploads/images/services/' ~ service.image2) }}" alt="Slide Image" width="200">
+                        {% endif %}
+                        {{ form_row(form.image2, { 'required': false }) }}
+                        <small class="form-text text-muted">Example block-level help text here.</small>
+                    </div>
+                </div>
+                
+            
+                
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
