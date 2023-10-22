@@ -8,6 +8,7 @@ parameters:
     services_directory: '%kernel.project_dir%/public/uploads/images/services'
     produits_directory: '%kernel.project_dir%/public/uploads/images/produits'
     equipe_directory: '%kernel.project_dir%/public/uploads/images/equipes'
+    blog_directory: '%kernel.project_dir%/public/uploads/images/blogs'
 
 
 

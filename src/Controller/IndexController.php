@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Admin\Blog;
 use App\Entity\Admin\Produit;
 use App\Entity\Admin\Service;
 use App\Repository\Admin\AproposRepository;
+use App\Repository\Admin\BlogRepository;
 use App\Repository\Admin\EquipeRepository;
 use App\Repository\Admin\home\AboutRepository;
 use App\Repository\Admin\ProduitRepository;
@@ -24,7 +26,8 @@ class IndexController extends AbstractController
         ProduitRepository $produitRepository,
         AproposRepository $aproposRepository,
         EquipeRepository $equipeRepository,
-        AboutRepository $aboutRepository
+        AboutRepository $aboutRepository,
+        BlogRepository $blogRepository
     ): Response
     {
         return $this->render('base.html.twig', [
@@ -34,6 +37,8 @@ class IndexController extends AbstractController
             'apropos' => $aproposRepository->findAll(),
             'equipes' => $equipeRepository->findAll(),
             'abouts' => $aboutRepository->findAll(),
+            'blogs' => $blogRepository->findAll(),
+
 
 
         ]);
@@ -100,5 +105,33 @@ class IndexController extends AbstractController
 
         ]);
     }
+
+    #[Route('/blogs', name: 'app_blog_index', methods: ['GET'])]
+    public function indexBlogs(BlogRepository $blogRepository): Response
+    {
+        return $this->render('client/blog.html.twig', [
+            'blogs' => $blogRepository->findAll(),
+
+        ]);
+    }
+
+    #[Route('blog/{id}', name: 'app_client_blog_show', methods: ['GET'])]
+    public function showBlog(Blog $blog): Response
+    {
+        return $this->render('client/blog/blogDetail.html.twig', [
+            'blog' => $blog,
+        ]);
+    }
+
+
+    #[Route('/contacts', name: 'app_contact_index', methods: ['GET'])]
+    public function indexContact(BlogRepository $blogRepository): Response
+    {
+        return $this->render('client/contact.html.twig', [
+            'blogs' => $blogRepository->findAll(),
+
+        ]);
+    }
+
     
 }

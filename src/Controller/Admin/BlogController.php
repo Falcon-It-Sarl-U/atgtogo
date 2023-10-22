@@ -30,6 +30,15 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $image = $form->get('image')->getData();
+            $nomImage = md5(uniqid()) . '.' . $image->guessExtension();
+            $blog->setImage($nomImage);
+            $image->move($this->getParameter('blog_directory'), $nomImage);
+            $blog->setStatut(true);
+
+            $blog->setStatut(true);
             $entityManager->persist($blog);
             $entityManager->flush();
 
@@ -57,6 +66,14 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            
+            $image = $form->get('image')->getData();
+            $nomImage = md5(uniqid()) . '.' . $image->guessExtension();
+            $blog->setImage($nomImage);
+            $image->move($this->getParameter('blog_directory'), $nomImage);
+            
             $entityManager->flush();
 
             return $this->redirectToRoute('app_admin_blog_index', [], Response::HTTP_SEE_OTHER);

@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block slider %}{% endblock %}
+{% block body %}
+
+
+	<section class="page-header">
+		<div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+		<div class="container">
+			<ul class="thm-breadcrumb list-unstyled">
+				<li>
+					<a href="{{ path('app_index') }}">Accueil</a>
+				</li>
+				<li>/</li>
+				<li>
+					<span>Détails de l'actualité</span>
+				</li>
+			</ul>
+			<h2>News Details</h2>
+		</div>
+	</section>
+
+
+	<section class="blog-details">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="blog-details__image">
+						<img src="{{ asset('uploads/images/blogs/' ~ blog.image) }}" class="img-fluid" alt="">
+					</div>
+					<div class="blog-card__content">
+						<div class="blog-card__date">18 Nov</div>
+						<div class="blog-card__meta">
+							<a href="{{ path('app_client_blog_show', {'id': blog.id}) }}">
+								<i class="far fa-user-circle"></i>
+								by Admin</a>
+							<a href="{{ path('app_client_blog_show', {'id': blog.id}) }}">
+								<i class="far fa-comments"></i>
+								2 Comments</a>
+						</div>
+						<h3>
+							<a href="{{ path('app_client_blog_show', {'id': blog.id}) }}">{{ blog.titre }}</a>
+						</h3>
+					</div>
+					<div class="blog-details__content">
+						<p>{{ blog.paragraphe1 }}</p>
+						<p>{{ blog.paragraphe2 }}</p>
+						
+					</div>
+
+					<div class="blog-details__meta">
+						<div class="blog-details__tags">
+							<span>Tags:</span>
+							<a href="#">Agriculture,</a>
+							<a href="#">Food,</a>
+							<a href="#">Economy</a>
+						</div>
+						<div class="blog-details__social">
+							<a href="#">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+							<a href="#">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a href="#">
+								<i class="fab fa-linkedin-in"></i>
+							</a>
+						</div>
+					</div>
+
+				
+
+
+				</div>
+				<div class="col-lg-4">
+					<div class="blog-sidebar">
+						<div class="blog-sidebar__search">
+							<form action="#">
+								<input type="text" placeholder="Search">
+								<button type="submit">
+									<i class="agrikon-icon-magnifying-glass"></i>
+								</button>
+							</form>
+						</div>
+						
+						<!-- /.blog-sidebar__posts -->
+						<div class="blog-sidebar__categories">
+							<h3>Catgories</h3>
+							<ul>
+								<li><a href="#"><i class="agrikon-icon-right-arrow"></i>Agriculture</a></li>
+								<li><a href="#"><i class="agrikon-icon-right-arrow"></i>Organic Food</a></li>
+
+								<li><a href="#"><i class="agrikon-icon-right-arrow"></i>Dairy Farm</a></li>
+
+								<li><a href="#"><i class="agrikon-icon-right-arrow"></i>Economy Solution</a></li>
+
+								<li><a href="#"><i class="agrikon-icon-right-arrow"></i>Harvests Innovations</a></li>
+							</ul>
+						</div>
+						<!-- /.blog-sidebar__categories -->
+						<div class="blog-sidebar__tags">
+							<h3>Tags</h3>
+							<div class="blog-sidebar__tags-links">
+								<a href="#">Agriculture,</a>
+								<a href="#">Food,</a>
+								<a href="#">Healthy,</a>
+								<a href="#">Dairy,</a>
+								<a href="#">Organic,</a>
+								<a href="#">Farm,</a>
+								<a href="#">Economy</a>
+							</div>
+							<!-- /.blog-sidebar__tags-links -->
+						</div>
+						<!-- /.blog-sidebar__tags -->
+					</div>
+					<!-- /.blog-sidebar -->
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

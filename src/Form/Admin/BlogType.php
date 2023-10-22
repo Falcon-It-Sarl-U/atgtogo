@@ -17,7 +17,16 @@ class BlogType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('titre')
+            ->add('titre',TextType::class, [ 
+                'label' => 'Titre*', 
+                'constraints' => new Length(['min' => 2, 'max' => 90]), 
+                'attr' => [ 
+                    'placeholder' => 'Le titre', 
+                    'class' => 'mb-3 form-control', 
+                    'id' => 'exampleInputNumber', 
+     
+                ]
+            ])
             ->add('paragraphe1', TextareaType::class, [
                 'label' => 'Paragraphe 1*',
                 'constraints' => new Length(['min' => 2, 'max' => 1000]),
@@ -42,7 +51,15 @@ class BlogType extends AbstractType
         ]
 
     ])
-            ->add('date',DateType::class)
+            ->add('date',DateType::class, [ 
+                'label' => 'Date*', 
+                'attr' => [ 
+                    'placeholder' => 'ex: Jean Picasso', 
+                    'class' => 'mb-3 form-control', 
+                    'id' => 'exampleInputNumber', 
+     
+                ]
+            ])
             ->add('auteur',TextType::class, [ 
                 'label' => 'Nom auteur*', 
                 'constraints' => new Length(['min' => 2, 'max' => 90]), 

@@ -23,12 +23,12 @@
 						<thead>
 							<tr>
 								<th>Id</th>
+								<th>Image</th>
 								<th>Titre</th>
 								<th>Paragraphe1</th>
 								<th>Paragraphe2</th>
 								<th>Date</th>
 								<th>Auteur</th>
-								<th>Image</th>
 								<th>actions</th>
 							</tr>
 						</thead>
@@ -36,12 +36,16 @@
 							{% for blog in blogs %}
 								<tr>
 									<td>{{ blog.id }}</td>
+									<td>
+										<img src="{{ asset('uploads/images/blogs/' ~ blog.image) }}" alt="blog Image" width="200">
+										
+									</td>
+
 									<td>{{ blog.titre }}</td>
 									<td>{{ blog.paragraphe1 }}</td>
 									<td>{{ blog.paragraphe2 }}</td>
 									<td>{{ blog.date ? blog.date|date('Y-m-d') : '' }}</td>
 									<td>{{ blog.auteur }}</td>
-									<td>{{ blog.image }}</td>
 									<td>
 										<a class="btn btn-primary" href="{{ path('app_admin_blog_show', {'id': blog.id}) }}">show</a>
 										<a class="btn btn-warning" href="{{ path('app_admin_blog_edit', {'id': blog.id}) }}">edit</a>

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% block slider %}{% endblock %}
+{% block body %}
+
+	<section class="page-header">
+		<div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+		<div class="container">
+			<ul class="thm-breadcrumb list-unstyled">
+				<li>
+                    <li><a href="{{ path('app_index') }}">Accueil</a></li>
+
+				</li>
+				<li>/</li>
+				<li>
+					<span>Nouvelles</span>
+				</li>
+			</ul>
+			<h2>Grille d'actualités</h2>
+		</div>
+	</section>
+
+	<section class="blog-grid">
+		<div class="container">
+			<div class="row">
+
+				{% for blog in blogs %}
+					<div class="col-md-6 col-lg-4">
+						<div class="blog-card">
+							<div class="blog-card__image">
+								<img src="{{ asset('uploads/images/blogs/' ~ blog.image) }}" alt="Agro Trading Group| blog Image" width="200">
+
+								<a href="{{ path('app_client_blog_show', {'id': blog.id}) }}"></a>
+							</div>
+							<div class="blog-card__content">
+								<div class="blog-card__date">{{ blog.date ? blog.date|date('Y-m-d') : '' }}</div>
+								<div class="blog-card__meta">
+									<a href="blog-details.html">
+										<i class="far fa-user-circle"></i>Par :
+										{{ blog.auteur }}</a>
+								</div>
+								<h3>
+									<a href="{{ path('app_client_blog_show', {'id': blog.id}) }}">{{ blog.titre }}</a>
+								</h3>
+								<a href="{{ path('app_client_blog_show', {'id': blog.id}) }}" class="thm-btn">En savoir plus</a>
+							</div>
+						</div>
+					</div>
+				{% else %}
+					<tr>
+						<td colspan="8">no records found</td>
+					</tr>
+				{% endfor %}
+
+
+			</div>
+			<div class="text-center more-btn__box">
+				<a href="#" class="thm-btn">Charger plus</a>
+			</div>
+		</div>
+	</section>
+
+
+{% endblock %}
