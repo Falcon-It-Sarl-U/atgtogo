@@ -87,24 +87,23 @@
 				<a class="sidebar-link" href="{{url('app_admin_equipe_index')}}">Equipes</a>
 			</li>
 
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="pages-invoice.html">
-					<i class="align-middle" data-feather="credit-card"></i>
-					<span class="align-middle">Invoice</span>
-				</a>
+			<li class="sidebar-header">
+				Gestion des Temoignages
 			</li>
-			<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
-				<a class="sidebar-link" href="{{url('app_home_slide_index')}}">Contact</a>
+			
+		<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_temoignage_index' %} active {% endif %}">
+			<a class="sidebar-link" href="{{url('app_admin_temoignage_index')}}">Temoignage</a>
+		</li>
+			<li class="sidebar-header">
+				Gestion des Blogs
+			</li>
+		
+			<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_blog_index' %} active {% endif %}">
+				<a class="sidebar-link" href="{{url('app_admin_blog_index')}}">Blogs</a>
 			</li>
 
 
-			<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
-				<a class="sidebar-link" href="{{url('app_home_slide_index')}}">
-					<i class="align-middle" data-feather="calendar"></i>
-					<span class="align-middle">Shop</span>
-					<span class="sidebar-badge badge bg-primary"></span>
-				</a>
-			</li>
+
 
 			<li class="sidebar-item  {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
 				<a class="sidebar-link" href="{{url('app_home_slide_index')}}">

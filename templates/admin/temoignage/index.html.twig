@@ -1,0 +1,67 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Temoignage index
+{% endblock %}
+
+{% block body %}
+	<h1>Temoignage index</h1>
+
+	<div class="alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<h5 class="card-title">Table with Buttons</h5>
+					<h6 class="card-subtitle text-muted">
+						<a class="btn btn-primary" href="{{ path('app_admin_temoignage_new') }}">Ajouter</a>
+					</h6>
+				</div>
+				<div class="card-body">
+					<table id="datatables-buttons" class="table table-striped" style="width:100%">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Message</th>
+								<th>Auteur</th>
+								<th>Profession</th>
+								<th>actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for temoignage in temoignages %}
+								<tr>
+									<td>{{ temoignage.id }}</td>
+									<td>{{ temoignage.message }}</td>
+									<td>{{ temoignage.auteur }}</td>
+									<td>{{ temoignage.profession }}</td>
+									<td>
+										<a class="btn btn-primary" href="{{ path('app_admin_temoignage_show', {'id': temoignage.id}) }}">show</a>
+										<a class="btn btn-warning" href="{{ path('app_admin_temoignage_edit', {'id': temoignage.id}) }}">Modifier</a>
+                                        {% if temoignage.statut %}
+											<a class="btn btn-success" href="{{ path('app_equipe_desactiver', {'id': temoignage.id}) }}" class="badge bg-label-primary me-1">
+												<i class="ti ti-off me-1"></i>
+												Activer
+
+											</a>
+										{% else %}
+											<a class="btn btn-warning" href="{{ path('app_equipe_activer', {'id': temoignage.id}) }}" class="badge bg-label-danger me-1">
+												Désactiver
+
+											</a>
+										{% endif %}
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="5">no records found</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

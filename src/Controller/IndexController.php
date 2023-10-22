@@ -9,6 +9,7 @@ use App\Repository\Admin\EquipeRepository;
 use App\Repository\Admin\home\AboutRepository;
 use App\Repository\Admin\ProduitRepository;
 use App\Repository\Admin\ServiceRepository;
+use App\Repository\Admin\TemoignageRepository;
 use App\Repository\Home\SlideRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -81,6 +82,7 @@ class IndexController extends AbstractController
     AproposRepository $aproposRepository,
     EquipeRepository $equipeRepository,
     ServiceRepository $serviceRepository,
+    TemoignageRepository $temoignageRepository
 
     ): Response
     {
@@ -91,6 +93,7 @@ class IndexController extends AbstractController
             'apropos' => $aproposRepository->findAll(),
             'equipes' => $equipeRepository->findAll(),
             'services' => $serviceRepository->findAll(),
+            'temoignages' => $temoignageRepository->findAll(),
 
 
 
