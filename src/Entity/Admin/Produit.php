@@ -38,6 +38,9 @@ class Produit
     #[ORM\Column(length: 255)]
     private ?string $image2 = null;
 
+    #[ORM\Column]
+    private ?bool $statut = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -135,6 +138,18 @@ class Produit
     public function setImage2(string $image2): static
     {
         $this->image2 = $image2;
+
+        return $this;
+    }
+
+    public function isStatut(): ?bool
+    {
+        return $this->statut;
+    }
+
+    public function setStatut(bool $statut): static
+    {
+        $this->statut = $statut;
 
         return $this;
     }

@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Admin\Produit;
 use App\Entity\Admin\Service;
+use App\Repository\Admin\ProduitRepository;
 use App\Repository\Admin\ServiceRepository;
 use App\Repository\Home\SlideRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,12 +16,15 @@ class IndexController extends AbstractController
     #[Route('/', name: 'app_index')]
     public function index(
         SlideRepository $slideRepository,
-        ServiceRepository $serviceRepository
+        ServiceRepository $serviceRepository,
+        ProduitRepository $produitRepository
     ): Response
     {
         return $this->render('base.html.twig', [
             'slides' => $slideRepository->findAll(),
             'services' => $serviceRepository->findAll(),
+            'produits' => $produitRepository->findAll(),
+
 
         ]);
     }
@@ -41,4 +46,23 @@ class IndexController extends AbstractController
             'service' => $service,
         ]);
     }
+
+
+    #[Route('/produits', name: 'app_produits_index', methods: ['GET'])]
+    public function indexProduit(ProduitRepository $produitRepository): Response
+    {
+        return $this->render('client/produits/allProduits.html.twig', [
+            'produits' => $produitRepository->findAll(),
+
+        ]);
+    }
+
+    #[Route('produits/{id}', name: 'app_client_produit_show', methods: ['GET'])]
+    public function showProduit(Produit $produit): Response
+    {
+        return $this->render('client/produits/produitDetail.html.twig', [
+            'produit' => $produit,
+        ]);
+    }
+    
 }
