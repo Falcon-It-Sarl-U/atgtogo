@@ -1,0 +1,13 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Edit About{% endblock %}
+
+{% block body %}
+    <h1>Edit About</h1>
+
+    {{ include('admin/home/about/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class='btn btn-success' href="{{ path('app_admin_home_about_index') }}">back to list</a>
+
+    {{ include('admin/home/about/_delete_form.html.twig') }}
+{% endblock %}

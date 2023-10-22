@@ -1,0 +1,11 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}New About{% endblock %}
+
+{% block body %}
+    <h1>Create new About</h1>
+
+    {{ include('admin/home/about/_form.html.twig') }}
+
+    <a class='btn btn-success' href="{{ path('app_admin_home_about_index') }}">back to list</a>
+{% endblock %}

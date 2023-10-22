@@ -16,8 +16,7 @@
 
 		<div class="sidebar-user">
 			<div class="d-flex justify-content-center">
-				<div class="flex-shrink-0">
-				</div>
+				<div class="flex-shrink-0"></div>
 				<div class="flex-grow-1 ps-2">
 					<a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
 						DJITRI Esther
@@ -47,14 +46,12 @@
 					<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
 						<a class="sidebar-link" href="{{url('app_home_slide_index')}}">Slides</a>
 					</li>
-					<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_service_index' %} active {% endif %}">
-						<a class="sidebar-link" href="{{url('app_admin_service_index')}}">Services</a>
-					</li>
+
 					<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_produit_index' %} active {% endif %}">
 						<a class="sidebar-link" href="{{url('app_admin_produit_index')}}">Produits</a>
 					</li>
-					<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
-						<a class="sidebar-link" href="{{url('app_home_slide_index')}}">Soja Bio</a>
+					<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_home_about_index' %} active {% endif %}">
+						<a class="sidebar-link" href="{{url('app_admin_home_about_index')}}">A propos</a>
 					</li>
 					<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
 						<a class="sidebar-link" href="{{url('app_home_slide_index')}}">Statistique</a>
@@ -63,29 +60,32 @@
 				</ul>
 
 			</li>
+
 			<li class="sidebar-header">
-				services
+				Gestion des Produits
+			</li>
+			<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_produit_index' %} active {% endif %}">
+				<a class="sidebar-link" href="{{url('app_admin_produit_index')}}">Produits</a>
+			</li>
+			<li class="sidebar-header">
+				Gestion des services
+			</li>
+			<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_service_index' %} active {% endif %}">
+				<a class="sidebar-link" href="{{url('app_admin_service_index')}}">Services</a>
 			</li>
 
-
-			<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_home_slide_index|app_home_slide_index' %} active {% endif %}">
-				<a data-bs-target="#services" data-bs-toggle="collapse" class="sidebar-link">
-					<i class="align-middle" data-feather="layout"></i>
-					<span class="align-middle">services</span>
-				</a>
-				<ul id="services" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-					<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
-						<a class="sidebar-link" href="{{url('app_home_slide_index')}}">Services et Details</a>
-					</li>
-					<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
-						<a class="sidebar-link" href="{{url('app_home_slide_index')}}">Categorie</a>
-					</li>
-
-				</ul>
-
-
+			<li class="sidebar-header">
+				Pages Apropos
 			</li>
-
+			<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_apropos_index' %} active {% endif %}">
+				<a class="sidebar-link" href="{{url('app_admin_apropos_index')}}">A Propos</a>
+			</li>
+			<li class="sidebar-header">
+				Gestion des Membres
+			</li>
+			<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_equipe_index' %} active {% endif %}">
+				<a class="sidebar-link" href="{{url('app_admin_equipe_index')}}">Equipes</a>
+			</li>
 
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="pages-invoice.html">
@@ -113,13 +113,12 @@
 				</a>
 			</li>
 
-		<li class="sidebar-item  {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
-			<a class="sidebar-link" href="{{url('app_home_slide_index')}}">
-				<i class="align-middle" data-feather="user"></i>
-				<span class="align-middle">Temoignage</span>
-			</a>
-		</li>
-
+			<li class="sidebar-item  {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
+				<a class="sidebar-link" href="{{url('app_home_slide_index')}}">
+					<i class="align-middle" data-feather="user"></i>
+					<span class="align-middle">Temoignage</span>
+				</a>
+			</li>
 
 
 		</ul>

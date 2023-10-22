@@ -1,0 +1,70 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}Equipe index
+{% endblock %}
+
+{% block body %}
+	<h1>Equipe index</h1>
+
+	<div class="alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<h5 class="card-title">Table with Buttons</h5>
+					<h6 class="card-subtitle text-muted">
+						<a class="btn btn-primary" href="{{ path('app_admin_equipe_new') }}">Ajouter</a>
+					</h6>
+				</div>
+				<div class="card-body">
+					<table id="datatables-buttons" class="table table-striped" style="width:100%">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Image</th>
+								<th>Nom et Prenom</th>
+								<th>Profession</th>
+								<th>actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for equipe in equipes %}
+								<tr>
+									<td>{{ equipe.id }}</td>
+									<td>
+										<img src="{{ asset('uploads/images/equipes/' ~ equipe.image) }}" alt="Slide Image" width="200">
+									</td>
+
+									<td>{{ equipe.nomPrenom }}</td>
+									<td>{{ equipe.profession }}</td>
+									{# <td>{{ equipe.statut ? 'Yes' : 'No' }}</td> #}
+									<td>
+										{# <a href="{{ path('app_admin_equipe_show', {'id': equipe.id}) }}">show</a> #}
+										<a class="btn btn-warning" href="{{ path('app_admin_equipe_edit', {'id': equipe.id}) }}">Modifier</a>
+										{% if equipe.statut %}
+											<a class="btn btn-success" href="{{ path('app_equipe_desactiver', {'id': equipe.id}) }}" class="badge bg-label-primary me-1">
+												<i class="ti ti-off me-1"></i>
+												Activer
+
+											</a>
+										{% else %}
+											<a class="btn btn-warning" href="{{ path('app_equipe_activer', {'id': equipe.id}) }}" class="badge bg-label-danger me-1">
+												Désactiver
+
+											</a>
+										{% endif %}
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="6">no records found</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

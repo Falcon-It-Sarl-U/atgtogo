@@ -1,0 +1,67 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}About index
+{% endblock %}
+
+{% block body %}
+	<h1>About index</h1>
+
+	<div class="alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<h5 class="card-title">Table with Buttons</h5>
+					<h6 class="card-subtitle text-muted">
+						{# <a class="btn btn-primary" href="{{ path('app_admin_home_about_new') }}">Ajouter</a> #}
+					</h6>
+				</div>
+				<div class="card-body">
+					<table id="datatables-buttons" class="table table-striped" style="width:100%">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Titre</th>
+								<th>SousTitre</th>
+								<th>Description</th>
+								<th>actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for about in abouts %}
+								<tr>
+									<td>{{ about.id }}</td>
+									<td>{{ about.titre }}</td>
+									<td>{{ about.sousTitre }}</td>
+									<td>{{ about.description }}</td>
+									<td>
+										{# <a href="{{ path('app_admin_home_about_show', {'id': about.id}) }}">show</a> #}
+										<a href="{{ path('app_admin_home_about_edit', {'id': about.id}) }}">Modifier</a>
+										{% if about.statut %}
+											<a class="btn btn-success" href="{{ path('app_produit_desactiver', {'id': about.id}) }}" class="badge bg-label-primary me-1">
+												<i class="ti ti-off me-1"></i>
+												Activer
+
+											</a>
+										{% else %}
+											<a class="btn btn-warning" href="{{ path('app_produit_activer', {'id': about.id}) }}" class="badge bg-label-danger me-1">
+												Désactiver
+
+											</a>
+										{% endif %}
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="5">no records found</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

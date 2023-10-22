@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Admin\Produit;
 use App\Entity\Admin\Service;
+use App\Repository\Admin\AproposRepository;
+use App\Repository\Admin\EquipeRepository;
+use App\Repository\Admin\home\AboutRepository;
 use App\Repository\Admin\ProduitRepository;
 use App\Repository\Admin\ServiceRepository;
 use App\Repository\Home\SlideRepository;
@@ -17,13 +20,19 @@ class IndexController extends AbstractController
     public function index(
         SlideRepository $slideRepository,
         ServiceRepository $serviceRepository,
-        ProduitRepository $produitRepository
+        ProduitRepository $produitRepository,
+        AproposRepository $aproposRepository,
+        EquipeRepository $equipeRepository,
+        AboutRepository $aboutRepository
     ): Response
     {
         return $this->render('base.html.twig', [
             'slides' => $slideRepository->findAll(),
             'services' => $serviceRepository->findAll(),
             'produits' => $produitRepository->findAll(),
+            'apropos' => $aproposRepository->findAll(),
+            'equipes' => $equipeRepository->findAll(),
+            'abouts' => $aboutRepository->findAll(),
 
 
         ]);
@@ -62,6 +71,30 @@ class IndexController extends AbstractController
     {
         return $this->render('client/produits/produitDetail.html.twig', [
             'produit' => $produit,
+        ]);
+    }
+
+
+
+    #[Route('/a-propos', name: 'app_apropos_index', methods: ['GET'])]
+    public function indexApropos(ProduitRepository $produitRepository,
+    AproposRepository $aproposRepository,
+    EquipeRepository $equipeRepository,
+    ServiceRepository $serviceRepository,
+
+    ): Response
+    {
+        $services = $serviceRepository->findAll();
+        $services = array_slice($services, 0, 3);
+        return $this->render('client/apropos.html.twig', [
+            'produits' => $produitRepository->findAll(),
+            'apropos' => $aproposRepository->findAll(),
+            'equipes' => $equipeRepository->findAll(),
+            'services' => $serviceRepository->findAll(),
+
+
+
+
         ]);
     }
     

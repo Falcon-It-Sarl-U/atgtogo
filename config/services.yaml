@@ -7,6 +7,7 @@ parameters:
     sliders_directory: '%kernel.project_dir%/public/uploads/images/home/slider'
     services_directory: '%kernel.project_dir%/public/uploads/images/services'
     produits_directory: '%kernel.project_dir%/public/uploads/images/produits'
+    equipe_directory: '%kernel.project_dir%/public/uploads/images/equipes'
 
 
 

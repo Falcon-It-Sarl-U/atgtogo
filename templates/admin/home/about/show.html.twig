@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About
+{% endblock %}
+
+{% block body %}
+	<h1>About</h1>
+
+
+	<div class="card mb-3">
+		<div class="card-header border-bottom">
+			<div class="row flex-between-end">
+				<div class="col-auto align-self-center">
+					<h5 class="mb-0" data-anchor="data-anchor">Slide index</h5>
+				</div>
+
+			</div>
+		</div>
+		<div class="card-body pt-0">
+			<div class="tab-content">
+				<div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-41755341-f9f5-415a-acd4-1d501e1c6abd" id="dom-41755341-f9f5-415a-acd4-1d501e1c6abd">
+					<div class="table-responsive scrollbar">
+						<table class="table">
+							<tbody>
+								<tr>
+									<th>Id</th>
+									<td>{{ about.id }}</td>
+								</tr>
+								<tr>
+									<th>Titre</th>
+									<td>{{ about.titre }}</td>
+								</tr>
+								<tr>
+									<th>SousTitre</th>
+									<td>{{ about.sousTitre }}</td>
+								</tr>
+								<tr>
+									<th>Description</th>
+									<td>{{ about.description }}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class='btn btn-success' href="{{ path('app_admin_home_about_index') }}">Retour à la liste</a>
+
+		<a class='btn btn-warning' href="{{ path('app_admin_home_about_edit', {'id': about.id}) }}">Modifier</a>
+
+		{{ include('admin/home/about/_delete_form.html.twig') }}
+	</div>
+
+{% endblock %}
