@@ -1,0 +1,31 @@
+div.MenuCouleur .simplebar-content{
+    /* background-color: rgb(92, 43, 226); */
+    background-image: url("/assets/img/menu.jpg") !important;
+
+}
+
+div.tailleHeader{
+    margin-bottom: -13px !important;
+
+}
+
+div.bouttonEloigner{
+    padding-top:22px;
+}
+div.nomLogo > img{
+    /* border: 1px solid #ddd; */
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    height:45px;
+    /* height: auto; */
+  }
+  
+  /* .sidebar-brand{
+    background-color: rgb(173, 25, 25);
+    padding-bottom: 1.2rem;
+  } */
+  div.Logo-entete > .sidebar-brand{
+    background-color: white;
+    padding-bottom: 0.1rem;
+  }

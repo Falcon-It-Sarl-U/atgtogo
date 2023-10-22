@@ -1,0 +1,14 @@
+{% extends 'baseAdmin.html.twig' %}
+
+
+
+    {% block body %}
+        <h1>Edit Slide</h1>
+    
+        {{ include('admin/home/slide/_form.html.twig', {'button_label': 'Update'}) }}
+    
+        <a class='btn btn-success' href="{{ path('app_home_slide_index') }}">Liste</a>
+    
+        {{ include('admin/home/slide/_delete_form.html.twig') }}
+    {% endblock %}
+    
