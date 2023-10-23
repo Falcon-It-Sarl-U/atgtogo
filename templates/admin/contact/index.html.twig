@@ -1,0 +1,49 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Contact index
+{% endblock %}
+
+{% block body %}
+	<h1>Contact index</h1>
+
+	<div class="alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<h5 class="card-title">Table with Buttons</h5>
+					<h6 class="card-subtitle text-muted">
+						<a class="btn btn-primary" href="{{ path('app_admin_contact_new') }}">Ajouter</a>
+					</h6>
+				</div>
+				<div class="card-body">
+					<table id="datatables-buttons" class="table table-striped" style="width:100%">
+						<thead></thead>
+						<tbody>
+							{% for contact in contacts %}
+								<tr>
+									<td>{{ contact.id }}</td>
+									<td>{{ contact.aproposCompagnie }}</td>
+									<td>{{ contact.adresse }}</td>
+									<td>{{ contact.telephone }}</td>
+									<td>{{ contact.email }}</td>
+									<td>{{ contact.email2 }}</td>
+									<td>
+										<a class="btn btn-primary" href="{{ path('app_admin_contact_show', {'id': contact.id}) }}">show</a>
+										<a class="btn btn-warning" href="{{ path('app_admin_contact_edit', {'id': contact.id}) }}">edit</a>
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="7">no records found</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -4,7 +4,7 @@
 {% block body %}
 
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url({{asset('assets/images/backgrounds/page-header-bg-1-1.jpg')}});"></div>
+        <div class="page-header__bg" style="background-image: url({{asset('assets/Client/images/backgrounds/page-header-bg-1-1.jpg')}});"></div>
         <div class="container">
             <ul class="thm-breadcrumb list-unstyled">
                 <li><a href="{{ path('app_index') }}">Accueil</a></li>
@@ -37,7 +37,7 @@
     
 
     <section class="team-one">
-        <img src="{{asset('assets/images/icons/team-bg-1-1.png')}}" alt="Image | Agro Trading Group" class="team-one__bg">
+        <img src="{{asset('assets/Client/images/icons/team-bg-1-1.png')}}" alt="Image | Agro Trading Group" class="team-one__bg">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-xl-5">
@@ -48,8 +48,7 @@
                             <h3>Agriculteurs experts</h3>
                         </div>
                         <div class="team-one__summery">
-                            <p>Lorem ipsum is simply free text available. Aenean eu leo quam. Pellentesque ornare sem
-                                lacinia quam venenatis vestibulum. Aenean lacinia bibendum.</p>
+                            <p>Nos agriculteurs experts dédient leur savoir-faire à un avenir agricole durable, en mettant en avant la terre, la qualité et l'innovation.</p>
                         </div>
 
                         <div class="team-one__nav">
@@ -117,7 +116,7 @@
     </section>
 
     <section class="testimonials-one testimonials-one__about">
-        <img src="assets/images/icons/testimonials-bg-1-1.png" class="testimonials-one__bg" alt="Image | Agro Trading Group">
+        <img src="assets/Client/images/icons/testimonials-bg-1-1.png" class="testimonials-one__bg" alt="Image | Agro Trading Group">
         <div class="container">
             <h2 class="testimonials-one__title">Témoignages</h2>
             <div id="testimonials-one__carousel" class="testimonials-one__carousel swiper-container">
@@ -142,7 +141,7 @@
                 </div>
             </div>
 
-            <div id="testimonials-one__thumb" class="swiper-container">
+            {# <div id="testimonials-one__thumb" class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="testimonials-one__image">
@@ -151,7 +150,7 @@
                     </div>
                     
                 </div>
-            </div>
+            </div> #}
 
             <div id="testimonials-one__meta" class="testimonials-one__carousel swiper-container">
                 <div class="swiper-wrapper">
@@ -188,9 +187,9 @@
                     <div class="about-three__content">
                         <div class="block-title">
                             <div class="block-title__image"></div>
-                            <p>Get to know us</p>
-                            <h3>30 Years Agriculture
-                                Experience</h3>
+                            <p>Apprendre a nous connaitre</p>
+                            <h3>30 ans Expérience en agriculture
+                                </h3>
                         </div>
                         <ul class="about-three__list list-unstyled">
                             <li>
@@ -211,12 +210,11 @@
                             </li>
                         </ul>
                         <div class="about-three__summery">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed deiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Donec scelerisque dolor id nunc dictum, interdum. </p>
+                            <p>Nous sommes déterminés à façonner un avenir agricole durable. Avec Agro Trading Group, notre engagement est une réalité.</p>
                         </div>
                         <div class="about-three__signs">
-                            <img src="{{asset('assets/Client/images/resources/about-3-1.png')}}" alt="Image | Agro Trading Group">
-                            <img src="{{asset('assets/Client/images/resources/sign-1-1.png')}}" alt="Image | Agro Trading Group">
+                            {# <img src="{{asset('assets/Client/images/resources/about-3-1.png')}}" alt="Image | Agro Trading Group"> #}
+                            {# <img src="{{asset('assets/Client/images/resources/sign-1-1.png')}}" alt="Image | Agro Trading Group"> #}
                         </div>
                     </div>
                 </div>
@@ -234,11 +232,11 @@
         <div class="container">
             <div class="call-to-action__content">
                 <i class="call-to-action__icon agrikon-icon-agriculture-2"></i>
-                <h3>We’re popular leader in agriculture
-                    market globally</h3>
+                <h3>Nous sommes un leader populaire en agriculture
+                    marché mondial</h3>
             </div>
             <div class="call-to-action__button">
-                <a href="services.html" class="thm-btn">Discover More</a>
+                <a href="{{ path('app_services_index') }}" class="thm-btn">Découvrir plus</a>
             </div>
         </div>
     </section>   

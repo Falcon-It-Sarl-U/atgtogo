@@ -16,7 +16,7 @@ class AproposType extends AbstractType
         $builder
             ->add('titre',TextType::class, [ 
                 'label' => 'Titre*', 
-                'constraints' => new Length(['min' => 2, 'max' => 90]), 
+                'constraints' => new Length(['min' => 2, 'max' => 120]), 
                 'attr' => [ 
                     'placeholder' => 'Le titre', 
                     'class' => 'mb-3 form-control', 
@@ -26,7 +26,7 @@ class AproposType extends AbstractType
             ])
             ->add('valeur',TextType::class, [ 
                 'label' => 'Valeur*', 
-                'constraints' => new Length(['min' => 2, 'max' => 90]), 
+                'constraints' => new Length(['min' => 2, 'max' => 120]), 
                 'attr' => [ 
                     'placeholder' => 'ex: notre valeur..', 
                     'class' => 'mb-3 form-control', 
@@ -36,7 +36,7 @@ class AproposType extends AbstractType
             ])
             ->add('valeur2',TextType::class, [ 
                 'label' => 'valeur 2', 
-                'constraints' => new Length(['min' => 2, 'max' => 90]), 
+                'constraints' => new Length(['min' => 2, 'max' => 120]), 
                 'attr' => [ 
                     'placeholder' => 'ex: notre valeur..', 
 
@@ -47,7 +47,7 @@ class AproposType extends AbstractType
             ])
             ->add('valeur3',TextType::class, [ 
                 'label' => 'Valeur 3*', 
-                'constraints' => new Length(['min' => 2, 'max' => 90]), 
+                'constraints' => new Length(['min' => 2, 'max' => 120]), 
                 'attr' => [ 
                     'placeholder' => 'ex: notre valeur..', 
 
@@ -56,9 +56,9 @@ class AproposType extends AbstractType
      
                 ]
             ])
-            ->add('Valeur 4',TextType::class, [ 
-                'label' => 'Nom*', 
-                'constraints' => new Length(['min' => 2, 'max' => 90]), 
+            ->add('valeur4',TextType::class, [ 
+                'label' => 'Valeur 4*', 
+                'constraints' => new Length(['min' => 2, 'max' => 120]), 
                 'attr' => [ 
                     'placeholder' => 'Le titre', 
                     'class' => 'mb-3 form-control', 
@@ -68,7 +68,7 @@ class AproposType extends AbstractType
             ])
             ->add('nom_directeur',TextType::class, [ 
                 'label' => 'Nom du DG*', 
-                'constraints' => new Length(['min' => 2, 'max' => 90]), 
+                'constraints' => new Length(['min' => 2, 'max' => 120]), 
                 'attr' => [ 
                     'placeholder' => 'Le titre', 
                     'class' => 'mb-3 form-control', 

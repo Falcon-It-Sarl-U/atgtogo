@@ -1,0 +1,31 @@
+<div class="col-md-12">
+	<div class="card">
+		<div class="card-header">
+			<h5 class="card-title">Equipes</h5>
+			<h6 class="card-subtitle text-muted">Tous les champs sont obligatoires</h6>
+		</div>
+		<div class="card-body">
+			{{ form_start(form) }}
+			<div class="row">
+				<div class="mb-3 col-md-6">
+					{{ form_row(form.nom_prenom) }}
+				</div>
+				<div class="mb-3 col-md-6"> {{ form_row(form.nom_prenom) }}</div>
+			</div>
+            <div class="row">
+				<div class="mb-3 col-md-6">
+					{{ form_row(form.telephone) }}
+				</div>
+				<div class="mb-3 col-md-6">{{ form_row(form.objet) }}</div>
+			</div>
+            <div class="row">
+				<div class="mb-3 col-md-6">
+					{{ form_row(form.message) }}
+				</div>
+			</div>
+        
+			<button type="submit" class="btn btn-primary">Enregistrer</button>
+			{{ form_end(form) }}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,49 @@
+<div class="blog-home-two blog-home-one">
+						<div class="container">
+							<div class="row top-row">
+								<div class="col-lg-6">
+									<div class="block-title">
+										<div class="block-title__image"></div>
+										<!-- /.block-title__image -->
+										<p>Extrait du billet de blog</p>
+										<h3>Dernières nouvelles et articles directement du blog</h3>
+									</div>
+									<!-- /.block-title -->
+								</div>
+								<!-- /.col-lg-6 -->
+								<div class="col-lg-6">
+									<p class="block-text">Découvrez les dernières tendances et les informations les plus récentes sur l'agriculture durable, l'agroalimentaire et bien plus encore. Notre blog est votre source d'inspiration pour un avenir agricole respectueux de la planète.</p>
+								</div>
+							</div>
+							<div class="row">
+								{% for blog in blogs %}
+								<div class="col-md-12 col-lg-4">
+									<div class="blog-card">
+										<div class="blog-card__image">
+											<img src="{{ asset('uploads/images/blogs/' ~ blog.image) }}" alt="Best Way to Do Eco and Agriculture">
+											<a href="{{ path('app_admin_blog_show', {'id': blog.id}) }}"></a>
+										</div>
+										<div class="blog-card__content">
+											<div class="blog-card__date">{{ blog.date ? blog.date|date('Y-m-d') : '' }}</div>
+											<div class="blog-card__meta">
+												<a href="{{ path('app_admin_blog_show', {'id': blog.id}) }}">
+													<i class="far fa-user-circle"></i>
+													Par {{ blog.auteur }}</a>
+												
+											</div>
+											<h3>
+												<a href="{{ path('app_admin_blog_show', {'id': blog.id}) }}">{{ blog.titre|slice(0, 32) }} ...</a>
+											</h3>
+											<a href="{{ path('app_admin_blog_show', {'id': blog.id}) }}" class="thm-btn">Lire Plus</a>
+										</div>
+									</div>
+								</div>
+							{% else %}
+								<tr>
+									<td colspan="8">no records found</td>
+								</tr>
+							{% endfor %}
+							</div>
+							<hr/>
+						</div>
+					</div>

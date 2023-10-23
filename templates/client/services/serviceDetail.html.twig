@@ -4,11 +4,11 @@
 
 
 	<section class="page-header">
-		<div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+		<div class="page-header__bg" style="background-image: url({{asset('assets/Client/images/backgrounds/page-header-bg-1-1.jpg') }});"></div>
 		<div class="container">
 			<ul class="thm-breadcrumb list-unstyled">
 				<li>
-					<a href="{{ path('') }}">Accueil</a>
+					<a href="{{ path('app_index') }}">Accueil</a>
 				</li>
 				<li>/</li>
 				<li>
@@ -26,21 +26,21 @@
 					<div class="service-sidebar">
 						<div class="service-sidebar__links">
 							<ul>
-								<li><a href="#">All Services</a></li>
-								<li><a href="#">Agriculture Products</a></li>
-
-								<li><a href="#">Organic Products</a></li>
-
-								<li><a href="#">Fresh Vegetables</a></li>
-
-								<li><a href="#">Dairy Products</a></li>
+								<li><a href="#">Tous les services</a></li>
+								{% for service in services %}
+								<li>
+									<a href="{{ path('app_client_service_show', {'id': service.id}) }}">{{ service.titre }}</a>
+									</li>
+							{% else %}
+								<tr>
+									<td colspan="5">no records found</td>
+								</tr>
+							{% endfor %}
 							</ul>
 						</div>
 						<div class="service-sidebar__call">
-							<div class="service-sidebar__call-bg" style="background-image: url({{ asset('uploads/images/services/' ~ service.image) }});"></div>
-							<h3>We sell best
-																																																                                agriculture
-																																																                                products</h3>
+							<div class="service-sidebar__call-bg" style="background-image: url({{ asset('uploads/images/services/' ~ service.image2) }});"></div>
+							<h3>Nous vendons les meilleurs produits agricoles</h3>
 						</div>
 					</div>
 				</div>
@@ -60,15 +60,13 @@
 					</ul>
 					<p>
 						{{ service.description2 }}</p>
-					<div class="special-box">Lorem Ipsum has been the
-																																				                        ndustry stan when an
-																																				                        unknown printer took a galley.</div>
+					<div class="special-box">Découvrez comment notre engagement envers la qualité et la durabilité se traduit dans chaque produit que nous cultivons et transformons. </div>
 					<div class="row">
 						<div class="col-md-6">
 							<img src="{{ asset('uploads/images/services/' ~ service.image2) }}" alt='Services| Agro Trading Group'>
 						</div>
 						<div class="col-md-6">
-							<h4>More Benefits</h4>
+							<h4>Plus d'avantages</h4>
 							<ul class="list-unstyled service-details__list-2">
 								<li>
 									<i class="fa fa-check-circle"></i>

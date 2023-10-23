@@ -27,17 +27,32 @@ class IndexController extends AbstractController
         AproposRepository $aproposRepository,
         EquipeRepository $equipeRepository,
         AboutRepository $aboutRepository,
+        TemoignageRepository $temoignageRepository,
         BlogRepository $blogRepository
     ): Response
     {
+        $services = $serviceRepository->findAll();
+        $services = array_slice($services, 0, 4);
+
+        $produits = $produitRepository->findAll();
+        $produits = array_slice($produits, 0, 3);
+
+        $blogs = $blogRepository->findAll();
+        $blogs = array_slice($blogs, 0, 3);
+
+
+
         return $this->render('base.html.twig', [
             'slides' => $slideRepository->findAll(),
-            'services' => $serviceRepository->findAll(),
-            'produits' => $produitRepository->findAll(),
+            'services' => $services,
+            'produits' => $produits,
             'apropos' => $aproposRepository->findAll(),
             'equipes' => $equipeRepository->findAll(),
             'abouts' => $aboutRepository->findAll(),
             'blogs' => $blogRepository->findAll(),
+            'temoignages' => $temoignageRepository->findAll(),
+            'blogs' => $blogs,
+
 
 
 
@@ -55,10 +70,13 @@ class IndexController extends AbstractController
     }
 
     #[Route('services/{id}', name: 'app_client_service_show', methods: ['GET'])]
-    public function showServices(Service $service): Response
+        
+        public function showServices(Service $service,ServiceRepository $serviceRepository,): Response
     {
         return $this->render('client/services/serviceDetail.html.twig', [
             'service' => $service,
+            'services' => $serviceRepository->findAll(),
+
         ]);
     }
 

@@ -6,7 +6,7 @@
 		<div class="sticky-header__content"></div>
 	</div>
 	<section class="page-header">
-		<div class="page-header__bg" style="background-image: url({{asset('assets/images/backgrounds/page-header-bg-1-1.jpg')}});"></div>
+		<div class="page-header__bg" style="background-image: url({{asset('assets/Client/images/backgrounds/page-header-bg-1-1.jpg')}});"></div>
 		<div class="container">
 			<ul class="thm-breadcrumb list-unstyled">
 				<li>
@@ -14,16 +14,19 @@
 				</li>
 				<li>/</li>
 				<li>
-					<span>Détails du projet</span>
+					<span>Détails du produit</span>
 				</li>
 			</ul>
-			<h2>Détails du projet</h2>
+			<h2>Détails du produit</h2>
 		</div>
 	</section>
 
 	<section class="project-details">
 		<div class="container">
-			<img src="{{ asset('uploads/images/produits/' ~ produit.image2) }}" class="img-fluid" alt="Agro Trading Group|Produit Image">
+			<img src="{{ asset('uploads/images/produits/' ~ produit.image2) }}" class="img-fluid" alt="Agro Trading Group|Produit Image" width="770" height="432">
+			{# <img src="{{ asset('uploads/images/produits/' ~ produit.image2) }}" class="img-fluid" alt="Agro Trading Group|Produit Image" width="770" height="auto" style="max-width: 100%;"> #}
+
+
 			<ul class="list-unstyled project-details__list">
 				
 				<li>
@@ -42,8 +45,7 @@
 			<div class="bottom-content">
 				<div class="row">
 					<div class="col-lg-6">
-						<h3>Most important and challenging
-																					                                facts about this project</h3>
+						<h3>Découvrez les Bienfaits du {{ produit.nom }}</h3>
 						<p>{{ produit.description2 }}</p>
 						<ul class="list-unstyled project-details__check-list">
 							<li>

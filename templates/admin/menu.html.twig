@@ -90,32 +90,35 @@
 			<li class="sidebar-header">
 				Gestion des Temoignages
 			</li>
-			
-		<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_temoignage_index' %} active {% endif %}">
-			<a class="sidebar-link" href="{{url('app_admin_temoignage_index')}}">Temoignage</a>
-		</li>
+
+			<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_temoignage_index' %} active {% endif %}">
+				<a class="sidebar-link" href="{{url('app_admin_temoignage_index')}}">Temoignage</a>
+			</li>
 			<li class="sidebar-header">
 				Gestion des Blogs
 			</li>
-		
+
 			<li class="sidebar-item {% if app.request.attributes.get('_route') starts with 'app_admin_blog_index' %} active {% endif %}">
 				<a class="sidebar-link" href="{{url('app_admin_blog_index')}}">Blogs</a>
 			</li>
+			<li class="sidebar-header">
+				Gestion des Contacts
+			</li>
 
-
-
-
-			<li class="sidebar-item  {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
-				<a class="sidebar-link" href="{{url('app_home_slide_index')}}">
+			<li class="sidebar-item  {% if app.request.attributes.get('_route') starts with 'app_admin_contact_index' %} active {% endif %}">
+				<a class="sidebar-link" href="{{url('app_admin_contact_index')}}">
 					<i class="align-middle" data-feather="user"></i>
-					<span class="align-middle">Blog</span>
+					<span class="align-middle">Contact</span>
 				</a>
 			</li>
 
-			<li class="sidebar-item  {% if app.request.attributes.get('_route') starts with 'app_home_slide_index' %} active {% endif %}">
-				<a class="sidebar-link" href="{{url('app_home_slide_index')}}">
+			<li class="sidebar-header">
+				Gestion des Messages
+			</li>
+			<li class="sidebar-item  {% if app.request.attributes.get('_route') starts with 'app_admin_message_index' %} active {% endif %}">
+				<a class="sidebar-link" href="{{url('app_admin_message_index')}}">
 					<i class="align-middle" data-feather="user"></i>
-					<span class="align-middle">Temoignage</span>
+					<span class="align-middle">Messages</span>
 				</a>
 			</li>
 
