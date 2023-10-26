@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block slider %}{% endblock %}
+{% block body %}
+
+	<section class="page-header">
+		<div class="page-header__bg" style="background-image: url({{asset('assets/Client/images/backgrounds/page-header-bg-1-1.jpg')}});"></div>
+		<div class="container">
+			<ul class="thm-breadcrumb list-unstyled">
+				<li>
+					<a href="{{ path('app_index') }}">Accueil</a>
+				</li>
+				<li>/</li>
+				<li>
+					<span>Connexion</span>
+				</li>
+			</ul>
+			<h2>Connexion
+			</h2>
+		</div>
+	</section>
+	<section class="service-two service-two__service-page">
+		<div class="container">
+
+			<div class="row">
+				<form method="post">
+					{% if error %}
+						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% endif %}
+			
+					{% if app.user %}
+						<div class="mb-3">
+							You are logged in as
+							{{ app.user.userIdentifier }},
+							<a href="{{ path('app_logout') }}">Logout</a>
+						</div>
+					{% endif %}
+			
+					<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+
+                    {{ include('user/_form.html.twig') }}
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+			
+					<button class="btn btn-lg btn-primary" type="submit">
+						S'enregistrer
+					</button>
+				</form>
+
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

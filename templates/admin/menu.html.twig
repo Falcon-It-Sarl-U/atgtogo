@@ -1,8 +1,8 @@
 <nav id="sidebar" class="sidebar js-sidebar">
 	<div class="sidebar-content js-simplebar">
-		<a class="sidebar-brand" href="index-2.html">
+		<a class="sidebar-brand" href="{{path('app_index')}}">
 			<span class="sidebar-brand-text align-middle">
-				Ivema Agri
+				ATG
 				<sup>
 					<small class="badge bg-primary text-uppercase">Pro</small>
 				</sup>
@@ -19,7 +19,7 @@
 				<div class="flex-shrink-0"></div>
 				<div class="flex-grow-1 ps-2">
 					<a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
-						DJITRI Esther
+						Robert GOGO
 					</a>
 					<div class="dropdown-menu dropdown-menu-start">
 						<a class="btn btn-warning " href="{{ path('app_home_slide_index') }}">Log out</a>
@@ -121,7 +121,15 @@
 					<span class="align-middle">Messages</span>
 				</a>
 			</li>
-
+			<li class="sidebar-header">
+				Gestion des Certification
+			</li>
+			<li class="sidebar-item  {% if app.request.attributes.get('_route') starts with 'app_admin_certification_index' %} active {% endif %}">
+				<a class="sidebar-link" href="{{url('app_admin_certification_index')}}">
+					<i class="align-middle" data-feather="user"></i>
+					<span class="align-middle">Certification</span>
+				</a>
+			</li>
 
 		</ul>
 

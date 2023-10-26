@@ -1,21 +1,28 @@
 <section class="main-slider">
 	<div class="swiper-container thm-swiper__slider" data-swiper-options='{
-																		        "slidesPerView": 1,
-																		        "loop": true,
-																		        "effect": "fade",
-																		        "autoplay": {
-																		            "delay": 5000
-																		        },
-																		        "navigation": {
-																		            "nextEl": "#main-slider__swiper-button-next",
-																		            "prevEl": "#main-slider__swiper-button-prev"
-																		        }
-																		    }'>
+																														        "slidesPerView": 1,
+																														        "loop": true,
+																														        "effect": "fade",
+																														        "autoplay": {
+																														            "delay": 8000
+																														        },
+																														        "navigation": {
+																														            "nextEl": "#main-slider__swiper-button-next",
+																														            "prevEl": "#main-slider__swiper-button-prev"
+																														        }
+																														    }'>
 		<div class="swiper-wrapper">
 
 			{% for slide in slides %}
 				<div class="swiper-slide">
-					<div class="image-layer" style="background-image: url('{{ asset('uploads/images/home/slider/' ~ slide.image) }}');">
+
+
+					<div class="image-layer" >
+						<video controls autoplay muted loop>
+							<source src="{{ asset('uploads/images/home/slider/' ~ slide.image) }}" type="video/mp4" height="50%">
+							Votre navigateur ne supporte pas la lecture de vidéos.
+						</video>
+
 						<div class="ombre" style="background-color: black; opacity: 0.5; position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></div>
 					</div>
 
@@ -47,10 +54,10 @@
 		</div>
 		<div class="main-slider__nav">
 			<div class="swiper-button-prev" id="main-slider__swiper-button-next">
-				<i class="agrikon-icon-left-arrow"></i>
+				<i class="atgtogo-icon-left-arrow"></i>
 			</div>
 			<div class="swiper-button-next" id="main-slider__swiper-button-prev">
-				<i class="agrikon-icon-right-arrow"></i>
+				<i class="atgtogo-icon-right-arrow"></i>
 			</div>
 		</div>
 	</div>

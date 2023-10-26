@@ -1,0 +1,56 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Certification index
+{% endblock %}
+
+{% block body %}
+	<h1>Certification index</h1>
+	<div class="alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<h5 class="card-title">Table with Buttons</h5>
+					<h6 class="card-subtitle text-muted">
+						<a class="btn btn-primary" href="{{ path('app_admin_certification_new') }}">Ajouter</a>
+					</h6>
+				</div>
+				<div class="card-body">
+					<table id="datatables-buttons" class="table table-striped" style="width:100%">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Image</th>
+
+								<th>Nom</th>
+								<th>Description</th>
+								<th>actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for certification in certifications %}
+								<tr>
+									<td>{{ certification.id }}</td>
+									<td><img width="100" height="100" src="{{ asset('uploads/images/certification/' ~ certification.image) }}" alt="All certification | Agro Trading Group">
+									</div></td>
+									<td>{{ certification.nom }}</td>
+									<td>{{ certification.description }}</td>
+									<td>
+										<a href="{{ path('app_admin_certification_show', {'id': certification.id}) }}">show</a>
+										<a href="{{ path('app_admin_certification_edit', {'id': certification.id}) }}">edit</a>
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="5">no records found</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

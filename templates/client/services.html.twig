@@ -1,4 +1,3 @@
-<div class="service-two__bottom-curv"></div>
 <div class="container">
 	<div class="block-title text-center">
 		<div class="block-title__image"></div>
@@ -7,27 +6,28 @@
 	</div>
 	<div class="row">
 		{% for service in services %}
-		<div class="col-sm-12 col-md-6 col-lg-3">
-			<div class="service-two__card">
-				<div class="service-two__card-image">
-					<img src="{{ asset('uploads/images/services/' ~ service.image) }}" alt="Service Image" width="200">
-				</div>
-				<div class="service-two__card-content">
-					<div class="service-two__card-icon">
-						<i class="agrikon-icon-tractor"></i>
+			<div class="col-sm-12 col-md-6 col-lg-3">
+				<div class="service-two__card">
+					<div class="service-two__card-image">
+						<img src="{{ asset('uploads/images/services/' ~ service.image) }}" alt="Service Image" width="200">
 					</div>
-					<h3>
-						<a href="{{ path('app_client_service_show', {'id': service.id}) }}">{{ service.titre|slice(0, 50) }}</a>
-					</h3>
-					<p>{{ service.description1|slice(0, 40) }} ...</p>
+					<div class="service-two__card-content">
+						{# <div class="service-two__card-icon">
+							<i class="agrikon-icon-tractor"></i>
+						</div> #}
+						<h3>
+							<a href="{{ path('app_client_service_show', {'id': service.id}) }}">{{ service.titre|slice(0, 50) }}</a>
+						</h3>
+						<p>{{ service.description1|slice(0, 40) }}
+							...</p>
+					</div>
 				</div>
 			</div>
-		</div>
-	{% else %}
-		<tr>
-			<td colspan="5">no records found</td>
-		</tr>
-	{% endfor %}
-		
+		{% else %}
+			<tr>
+				<td colspan="5">no records found</td>
+			</tr>
+		{% endfor %}
+
 	</div>
 </div>

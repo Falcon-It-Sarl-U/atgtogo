@@ -17,8 +17,8 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('aproposCompagnie', TextType::class, [
-                'label' => 'Adresse*',
-                'constraints' => new Length(['min' => 2, 'max' => 120]),
+                'label' => 'A propos*',
+                'constraints' => new Length(['min' => 2, 'max' => 300]),
                 'attr' => [
                     'placeholder' => 'Lome-TOGO',
                     'class' => 'mb-3 form-control',
