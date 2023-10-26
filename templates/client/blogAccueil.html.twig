@@ -21,20 +21,20 @@
 									<div class="blog-card">
 										<div class="blog-card__image">
 											<img src="{{ asset('uploads/images/blogs/' ~ blog.image) }}" alt="Best Way to Do Eco and Agriculture">
-											<a href="{{ path('app_admin_blog_show', {'id': blog.id}) }}"></a>
+											<a href="{{ path('app_client_blog_show', {'id': blog.id}) }}"></a>
 										</div>
 										<div class="blog-card__content">
 											<div class="blog-card__date">{{ blog.date ? blog.date|date('Y-m-d') : '' }}</div>
 											<div class="blog-card__meta">
-												<a href="{{ path('app_admin_blog_show', {'id': blog.id}) }}">
+												<a href="{{ path('app_client_blog_show', {'id': blog.id}) }}">
 													<i class="far fa-user-circle"></i>
 													Par {{ blog.auteur }}</a>
 												
 											</div>
 											<h3>
-												<a href="{{ path('app_admin_blog_show', {'id': blog.id}) }}">{{ blog.titre|slice(0, 32) }} ...</a>
+												<a href="{{ path('app_client_blog_show', {'id': blog.id}) }}">{{ blog.titre|slice(0, 32) }} ...</a>
 											</h3>
-											<a href="{{ path('app_admin_blog_show', {'id': blog.id}) }}" class="thm-btn">Lire Plus</a>
+											<a href="{{ path('app_client_blog_show', {'id': blog.id}) }}" class="thm-btn">Lire Plus</a>
 										</div>
 									</div>
 								</div>
