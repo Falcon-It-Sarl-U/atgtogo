@@ -4,13 +4,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Accueil || Agro Trading Group </title>
+		<title>Accueil || Agro Trading Group
+		</title>
 		<link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/Client/images/favicons/apple-touch-icon.png')}}">
 		<link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/Client/images/favicons/favicon-32x32.png')}}">
 		<link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/Client/images/favicons/favicon-16x16.png')}}">
 		<link rel="manifest" href="{{asset('assets/Client/images/favicons/site.webmanifest')}}">
 		<meta name="description" content="Import – Export, Agro-Alimentation
-		Achats et Ventes de Produits Agricoles Bio, Promotion de la culture Biologique">
+					Achats et Ventes de Produits Agricoles Bio, Promotion de la culture Biologique">
 
 		<link rel="preconnect" href="https://fonts.gstatic.com/">
 		<link href="https://fonts.googleapis.com/css2?family=Handlee&amp;family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
@@ -31,9 +32,9 @@
 	</head>
 
 	<body>
-		<div class="preloader">
-			<img class="preloader__image" width="55" src="{{asset('assets/Client/images/loader.png')}}" alt="">
-		</div>
+		{# <div class="preloader">
+					<img class="preloader__image" width="55" src="{{asset('assets/Client/images/loader.png')}}" alt="">
+				</div> #}
 		<div class="page-wrapper">
 
 			{% include 'client/head.html.twig' %}
@@ -154,56 +155,56 @@
 				</section>
 
 				{# <section class="contact-two">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
-								<div class="contact-two__image">
-									<div class="contact-two__image-bubble-1"></div>
-									<div class="contact-two__image-bubble-2"></div>
-									<div class="contact-two__image-bubble-3"></div>
-									<img src="{{asset('assets/Client/images/resources/contact-1-1.jpg')}}" class="img-fluid" alt="">
-								</div>
-							</div>
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3">
-								<div class="contact-two__content">
-									<div class="block-title">
-										<div class="block-title__image"></div>
-										<p>Contactez maintenant</p>
-										<h3>Laissez-nous un message</h3>
+									<div class="container">
+										<div class="row">
+											<div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
+												<div class="contact-two__image">
+													<div class="contact-two__image-bubble-1"></div>
+													<div class="contact-two__image-bubble-2"></div>
+													<div class="contact-two__image-bubble-3"></div>
+													<img src="{{asset('assets/Client/images/resources/contact-1-1.jpg')}}" class="img-fluid" alt="">
+												</div>
+											</div>
+											<div class="col-sm-12 col-md-12 col-lg-12 col-xl-3">
+												<div class="contact-two__content">
+													<div class="block-title">
+														<div class="block-title__image"></div>
+														<p>Contactez maintenant</p>
+														<h3>Laissez-nous un message</h3>
+													</div>
+													<div class="contact-two__summery">
+														<p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor
+																																				                                    incididunt
+																																				                                    ut labore et dolore magna aliqua lonm andhn. Aenean tincidunt id mauris id auctor. Donec at
+																																				                                    ligula lacus dignissim mi quis simply neque.</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+												<form action="https://ninetheme.com/themes/html-templates/atgtogo/assets/inc/sendemail.php" class="contact-one__form contact-form-validated">
+													<div class="row">
+														<div class="col-lg-12">
+															<input type="text" name="name" placeholder="Full Name">
+														</div>
+														<div class="col-lg-12">
+															<input type="text" name="email" placeholder="Email Address">
+														</div>
+														<div class="col-lg-12">
+															<input type="text" name="phone" placeholder="Phone Number">
+														</div>
+														<div class="col-lg-12">
+															<textarea name="message" placeholder="Write Message"></textarea>
+														</div>
+														<div class="col-lg-12">
+															<button type="submit" class="thm-btn">Send Message</button>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
 									</div>
-									<div class="contact-two__summery">
-										<p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor
-																																                                    incididunt
-																																                                    ut labore et dolore magna aliqua lonm andhn. Aenean tincidunt id mauris id auctor. Donec at
-																																                                    ligula lacus dignissim mi quis simply neque.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
-								<form action="https://ninetheme.com/themes/html-templates/atgtogo/assets/inc/sendemail.php" class="contact-one__form contact-form-validated">
-									<div class="row">
-										<div class="col-lg-12">
-											<input type="text" name="name" placeholder="Full Name">
-										</div>
-										<div class="col-lg-12">
-											<input type="text" name="email" placeholder="Email Address">
-										</div>
-										<div class="col-lg-12">
-											<input type="text" name="phone" placeholder="Phone Number">
-										</div>
-										<div class="col-lg-12">
-											<textarea name="message" placeholder="Write Message"></textarea>
-										</div>
-										<div class="col-lg-12">
-											<button type="submit" class="thm-btn">Send Message</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</section> #}
-				
+								</section> #}
+
 
 			</div>
 
@@ -288,7 +289,7 @@
 								<img src="{{asset('assets/Client/images/logo-light.png')}}" width="153" alt="">
 							</a>
 							<p>Import – Export, Agro-Alimentation
-								Achats et Ventes de Produits Agricoles Bio, Promotion de la culture Biologique</p>
+																Achats et Ventes de Produits Agricoles Bio, Promotion de la culture Biologique</p>
 							<form action="#" data-url="YOUR_MAILCHIMP_URL" class="mc-form">
 								<input type="email" name="EMAIL" placeholder="Email Address">
 								<button type="submit">
@@ -332,23 +333,24 @@
 							<ul class="list-unstyled footer-widget__post">
 								{% for blog in blogs %}
 
-								<li>
-									<img src="{{ asset('uploads/images/blogs/' ~ blog.image) }}" alt="Best Way to Do Eco and Agriculture" width="50" height="50">
+									<li>
+										<img src="{{ asset('uploads/images/blogs/' ~ blog.image) }}" alt="Best Way to Do Eco and Agriculture" width="50" height="50">
 
-									<div class="footer-widget__post-content">
-										<span>{{ blog.date ? blog.date|date('Y-m-d') : '' }}</span>
-										<h4>
-											<a href="{{ path('app_admin_blog_show', {'id': blog.id}) }}">{{ blog.titre|slice(0, 32) }} ...</a>
-										</h4>
-									</div>
-								</li>
+										<div class="footer-widget__post-content">
+											<span>{{ blog.date ? blog.date|date('Y-m-d') : '' }}</span>
+											<h4>
+												<a href="{{ path('app_admin_blog_show', {'id': blog.id}) }}">{{ blog.titre|slice(0, 32) }}
+													...</a>
+											</h4>
+										</div>
+									</li>
 
-							{% else %}
-								<tr>
-									<td colspan="8">no records found</td>
-								</tr>
-							{% endfor %}
-								
+								{% else %}
+									<tr>
+										<td colspan="8">no records found</td>
+									</tr>
+								{% endfor %}
+
 							</ul>
 						</div>
 					</div>
@@ -357,7 +359,8 @@
 						<ul class="list-unstyled footer-widget__contact">
 							<li>
 								<i class="atgtogo-icon-telephone"></i>
-								<a href="tel:+22891894243"> (+228) 91894243</a>
+								<a href="tel:+22891894243">
+									(+228) 91894243</a>
 							</li>
 							<li>
 								<i class="atgtogo-icon-email"></i>
