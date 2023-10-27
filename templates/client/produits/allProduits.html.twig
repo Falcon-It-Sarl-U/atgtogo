@@ -24,7 +24,7 @@
                 {% for produit in produits %}
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="projects-one__single">
-                        <img src="{{ asset('uploads/images/produits/' ~ produit.image) }}" alt="Produit Image|Agro Trading Group" width="300" height="400">
+                        <img src="{{ asset('uploads/images/produits/' ~ produit.image) }}" alt="Produit Image|Agro Trading Group" width="250" height="320">
                         <div class="projects-one__content">
                             <h3>{{ produit.nom }}</h3>
                             <a href="{{ path('app_client_produit_show', {'id': produit.id}) }}" class="projects-one__button"><i class="atgtogo-icon-right-arrow"></i></a>
